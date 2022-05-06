@@ -13,17 +13,17 @@ use function Pest\Laravel\json;
 
 use App\Http\Services\ResultsFinal;
 
-//test('it has a home page', function () {
-//    get('/')->assertStatus(200);
-//});
-//
-//test('It hits the post endpoint', function() {
-//    json('POST', '/results', ['player1' => 2, 'player2' => 3])->assertStatus(302);
-//});
-//
-//test('Ensures that the Only Numbers are input', function() {
-//    json('POST', '/results', ['player1' => 2, 'player2' => 'frgdg'])->errors->player2->toBe("Score has to be a number");
-//});
+test('it has a home page', function () {
+    get('/')->assertStatus(200);
+});
+
+test('It hits the post endpoint', function() {
+    json('POST', '/results', ['player1' => 2, 'player2' => 3])->assertStatus(302);
+});
+
+test('Ensures that the Only Numbers are input', function() {
+    json('POST', '/results', ['player1' => 2, 'player2' => 'frgdg'])->errors->player2->toBe("Score has to be a number");
+});
 
 
 test('Expected Results', function ($scoresArray, $outcome) {
