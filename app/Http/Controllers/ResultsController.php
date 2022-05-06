@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ResultsFinal;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 
@@ -24,11 +25,17 @@ class ResultsController extends Controller
         $attributes = $request->validate([
             'player1' => 'required|integer',
             'player2' => 'required|integer',
-        ]);
+        ],
+            [
+                'player1.integer' => 'Score has to be a number',
+                'player2.integer' => 'Score has to be a number',
+            ]);
 
-        dd($attributes);
+//        dd($attributes);
+        $fina_results = (new ResultsFinal())->expectedResults($attributes);
 
-//        User::create($attributes);
+        dd($fina_results);
+
 
 //        return back()->with(['results' => $score]);
     }
