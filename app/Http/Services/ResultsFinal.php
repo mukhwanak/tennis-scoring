@@ -36,7 +36,7 @@ class ResultsFinal
 
         return $this->arePlayersLessThree() && ($this->sameResults())
             ? $this->pointsStrings($this->player1) . ' All'
-            : $this->pointsStrings($this->player1) . '-' . $this->pointsStrings($this->player2);
+            : $this->pointsStrings($this->player1) . ' : ' . $this->pointsStrings($this->player2);
 
     }
 
