@@ -36,8 +36,8 @@
                     <table class="min-w-full divide-y divide-gray-200">
                         <tbody class="bg-white divide-y divide-gray-200">
                         <tr>
-                            <h4 v-if="final_results">Score</h4>
-                            <h2>{{ final_results }}</h2>
+                            <h4 v-if="$page.props.notify.final_results">Results</h4>
+                            <h2>{{ $page.props.notify.final_results }}</h2>
                         </tr>
 
 
@@ -52,7 +52,7 @@
 
 <script setup>
 import {useForm} from "@inertiajs/inertia-vue3";
-// // import {ref} from "vue";
+
 
 let form = useForm({
     player1: null,

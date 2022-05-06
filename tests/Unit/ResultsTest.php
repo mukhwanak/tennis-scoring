@@ -8,12 +8,11 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-use App\Http\Services\ResultsFinal;
+//use PHPUnit\Framework\TestCase;
+//use App\Http\Services\ResultsFinal;
 
-class ResultsTest extends TestCase
-{
+use Tests\TestCase;
 
-
-
-}
+use Pest\Laravel;
+use function Pest\Laravel\get;
+use function Pest\Laravel\json;

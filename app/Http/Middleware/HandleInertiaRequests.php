@@ -38,6 +38,12 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             //
+            'notify' => function () use ($request) {
+                return [
+                    'final_results' => $request->session()->get('final_results'),
+                ];
+            },
+
         ]);
     }
 }

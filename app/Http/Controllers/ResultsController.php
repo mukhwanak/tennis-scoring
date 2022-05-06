@@ -31,13 +31,9 @@ class ResultsController extends Controller
                 'player2.integer' => 'Score has to be a number',
             ]);
 
-//        dd($attributes);
-        $fina_results = (new ResultsFinal())->expectedResults($attributes);
+        $results = (new ResultsFinal())->expectedResults($attributes);
 
-        dd($fina_results);
-
-
-//        return back()->with(['results' => $score]);
+        return back()->with(['final_results' => $results]);
     }
 
 }

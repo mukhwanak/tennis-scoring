@@ -14,9 +14,6 @@
           Tennis Scorring App
         </h1>
 
-        <p class="text-sm ml-4">
-          Welcome Back,
-        </p>
       </div>
 
       <Nav />

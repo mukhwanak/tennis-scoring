@@ -8,6 +8,6 @@
     >
   </Head>
   <h1 class="text-3xl">
-    Home S
+    Home
   </h1>
 </template>
