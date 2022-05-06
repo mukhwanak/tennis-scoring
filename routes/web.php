@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResultsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ResultsController::class, 'index']);
+
+Route::get('/results/create', [ResultsController::class, 'create']);
+Route::post('/results', [ResultsController::class, 'store']);
