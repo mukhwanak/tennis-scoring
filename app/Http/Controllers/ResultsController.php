@@ -33,7 +33,8 @@ class ResultsController extends Controller
 
         $results = (new ResultsFinal())->expectedResults($attributes);
 
-        return back()->with(['final_results' => $results]);
+        return Inertia::render('Results/Create',['final_results' => $results]);
+    
     }
 
 }
