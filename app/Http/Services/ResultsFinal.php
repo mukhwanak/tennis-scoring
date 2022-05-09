@@ -22,20 +22,24 @@ class ResultsFinal
         $this->player1 = $scores['player1'];
         $this->player2 = $scores['player2'];
 
+        //If at least three points have been scored by both players, and the score is equal, then the score is
         if ($this->player1 >= 3 && $this->player2 >= 3 && $this->sameResults()) {
             return 'Deuce';
         }
 
-        if ($this->player1 >= 4 && $this->player2 >= 4 && abs($this->player1 - $this->player2) >= 2) {
+        //Check player as won or if one player is less than 3 point to avoid the error of displaying the number instead of the points string
+
+        if (($this->player1 >= 4 && $this->player2 >= 4 && abs($this->player1 - $this->player2) >= 2)||(($this->player2 < 3 ||$this->player1 < 3 ))) {
             return $this->isLead() . ' wins';
         }
 
+        //If at least three points have been scored by both players but one player has one more point than the other, then the score for the player ahead is "Advantage".
         if ($this->player1 >= 3 && $this->player2 >= 3 && $this->player1 !== $this->player2) {
             return 'Advantage: ' . $this->isLead();
         }
 
         return $this->arePlayersLessThree() && ($this->sameResults())
-            ? $this->pointsStrings($this->player1) . ' All'
+            ? $this->pointsStrings($this->player1) . ' All' // If both players have the same score below three points ("Forty") then the score is suffixed with "All" (Example: "Thirty All").
             : $this->pointsStrings($this->player1) . ' : ' . $this->pointsStrings($this->player2);
 
     }
