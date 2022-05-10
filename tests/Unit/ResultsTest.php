@@ -22,7 +22,7 @@ test('It hits the post endpoint', function() {
 });
 
 test('Ensures that the Only Numbers are input', function() {
-    json('POST', '/results', ['player1' => 2, 'player2' => 'frgdg'])->errors->player2->toBe("Score has to be a number");
+    json('POST', '/results', ['player1' => 2, 'player2' => 'frgdg'])->assertInvalid(['player2' => "Score has to be a number"]);
 });
 
 
